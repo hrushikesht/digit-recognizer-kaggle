@@ -5,7 +5,10 @@ def sigmoid(object):
     return 1/(1+np.exp(object))
 
 def costFunction(Y,target):
-    J_theta=(1/2)*np.sum(Y-target)
+
+    
+    
+    J_theta=(1/2)*np.sum(-target)
     return J_theta
 
 def trainNeuralNetwork(dataset , labmda):
@@ -57,7 +60,7 @@ def trainNeuralNetwork(dataset , labmda):
         a3=np.dot(z2,theta2)
         z3=sigmoid(a3)
 
-        cost=costFunction(Y,z3)
+        cost=costFunction(Y[index],z3)
         print cost
         
 
